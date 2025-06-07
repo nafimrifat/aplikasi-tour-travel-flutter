@@ -1,0 +1,159 @@
+ERROR - 2024-07-07 06:41:04 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'tour_api', 3306, '', 0)
+#1 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\app\Controllers\LoginController.php(17): CodeIgniter\BaseModel->first()
+#7 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#8 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#9 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\rewrite.php(44): require_once('D:\\dokumenku\\tu...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\app\Controllers\LoginController.php(17): CodeIgniter\BaseModel->first()
+#6 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(933): App\Controllers\LoginController->login()
+#7 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+#8 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\rewrite.php(44): require_once('D:\\dokumenku\\tu...')
+#13 {main}
+CRITICAL - 2024-07-07 06:41:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `member`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LoginController.php(17): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LoginController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LoginController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\dokumenku\\tugas-kuliah\\Semester 4\\pemrograman mobile\\uas\\tour_travel_api\\public\\index.php')
+ERROR - 2024-07-07 06:43:02 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'tour_api', 3306, '', 0)
+#1 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\app\Controllers\LogoutController.php(18): CodeIgniter\BaseModel->first()
+#7 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(933): App\Controllers\LogoutController->logout()
+#8 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogoutController))
+#9 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\rewrite.php(44): require_once('D:\\dokumenku\\tu...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\app\Controllers\LogoutController.php(18): CodeIgniter\BaseModel->first()
+#6 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(933): App\Controllers\LogoutController->logout()
+#7 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogoutController))
+#8 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\rewrite.php(44): require_once('D:\\dokumenku\\tu...')
+#13 {main}
+CRITICAL - 2024-07-07 06:43:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `member_token`
+WHERE `auth_key` = :auth_key:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LogoutController.php(18): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LogoutController->logout()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogoutController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\dokumenku\\tugas-kuliah\\Semester 4\\pemrograman mobile\\uas\\tour_travel_api\\public\\index.php')
+ERROR - 2024-07-07 06:43:07 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'tour_api', 3306, '', 0)
+#1 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\app\Controllers\LogoutController.php(18): CodeIgniter\BaseModel->first()
+#7 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(933): App\Controllers\LogoutController->logout()
+#8 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogoutController))
+#9 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\rewrite.php(44): require_once('D:\\dokumenku\\tu...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\app\Controllers\LogoutController.php(18): CodeIgniter\BaseModel->first()
+#6 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(933): App\Controllers\LogoutController->logout()
+#7 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogoutController))
+#8 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#10 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\dokumenku\tugas-kuliah\Semester 4\pemrograman mobile\uas\tour_travel_api\system\rewrite.php(44): require_once('D:\\dokumenku\\tu...')
+#13 {main}
+CRITICAL - 2024-07-07 06:43:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1636): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `member_token`
+WHERE `auth_key` = :auth_key:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\LogoutController.php(18): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LogoutController->logout()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LogoutController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\dokumenku\\tugas-kuliah\\Semester 4\\pemrograman mobile\\uas\\tour_travel_api\\public\\index.php')
